@@ -1,0 +1,33 @@
+{
+    "name": "express-authx",
+    "version": "0.0.1",
+    "description": "Express version of nest-authx",
+    "main": "dist/app.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/app.js",
+        "dev": "ts-node-dev src/app.ts"
+    },
+    "dependencies": {
+        "@hapi/boom": "^10.0.1",
+        "bcryptjs": "^3.0.2",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.1",
+        "dotenv": "^16.4.7",
+        "express": "^4.18.2",
+        "express-validator": "^6.14.2",
+        "ioredis": "^5.4.1",
+        "jsonwebtoken": "^9.0.0",
+        "pg": "^8.13.0",
+        "reflect-metadata": "^0.2.0",
+        "ts-node-dev": "^2.0.0",
+        "typeorm": "^0.3.20"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/jsonwebtoken": "^9.0.1",
+        "@types/node": "^20.3.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.3"
+    }
+}
