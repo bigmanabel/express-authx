@@ -8,7 +8,7 @@ export class UsersController {
     async create(req: Request, res: Response, next: NextFunction) {
         try {
             // In a real app, validate with express-validator
-            const user: User = req.body;
+            const user = req.body;
             const created = await usersService.create(user);
             res.status(201).json(created);
         } catch (error) {

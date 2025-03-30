@@ -1,30 +1,24 @@
 import { User } from "../models/user.entity";
 
-const fakeUserRepo = new Map<string, User>();
-
 export class UsersService {
-    async create(user: User): Promise<User> {
-        fakeUserRepo.set(user.id, user);
-        return user;
+    async create(userData: any): Promise<any> {
+        // ...existing validation...
+        return User.create(userData);
     }
 
-    async findAll(): Promise<User[]> {
-        return Array.from(fakeUserRepo.values());
+    async findAll(): Promise<any[]> {
+        return User.find();
     }
 
-    async findOne(id: string): Promise<User | undefined> {
-        return fakeUserRepo.get(id);
+    async findOne(id: string): Promise<any | null> {
+        return User.findById(id);
     }
 
-    async update(id: string, update: Partial<User>): Promise<User | undefined> {
-        const user = fakeUserRepo.get(id);
-        if (!user) return undefined;
-        const updated = { ...user, ...update };
-        fakeUserRepo.set(id, updated);
-        return updated;
+    async update(id: string, update: any): Promise<any | null> {
+        return User.findByIdAndUpdate(id, update, { new: true });
     }
 
     async remove(id: string): Promise<void> {
-        fakeUserRepo.delete(id);
+        await User.findByIdAndDelete(id);
     }
 }

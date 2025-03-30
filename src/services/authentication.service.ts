@@ -7,9 +7,6 @@ import { RefreshTokenIdsStorage } from './refreshTokenIdsStorage';
 import { InvalidateRefreshTokenError } from '../errors/invalidate-refresh-token.error';
 import { Role } from '../enums/role.enum';
 
-// In a real app, you would use a repository (TypeORM) to access the database.
-const fakeUserRepo = new Map<string, User>();
-
 export class AuthenticationService {
     constructor(
         private readonly bcryptService: BcryptService,
@@ -18,54 +15,53 @@ export class AuthenticationService {
     ) { }
 
     async signUp(email: string, password: string): Promise<{ accessToken: string; refreshToken: string }> {
-        if ([...fakeUserRepo.values()].find(u => u.email === email)) {
+        const existing = await User.findOne({ email });
+        if (existing) {
             throw new Error('User already exists');
         }
         const hashedPassword = await this.bcryptService.hash(password);
-        const newUser: User = {
-            id: randomUUID(),
+        const newUser = await User.create({
             email,
             password: hashedPassword,
             role: Role.Regular,
             apiKeys: []
-        };
-        fakeUserRepo.set(newUser.id, newUser);
+        });
         return this.generateTokens(newUser);
     }
 
     async signIn(email: string, password: string): Promise<{ accessToken: string; refreshToken: string }> {
-        const user = [...fakeUserRepo.values()].find(u => u.email === email);
+        const user = await User.findOne({ email }).select('+password');
         if (!user) throw new Error('User does not exist');
         const valid = await this.bcryptService.compare(password, user.password);
         if (!valid) throw new Error('Password does not match');
         return this.generateTokens(user);
     }
 
-    async generateTokens(user: User): Promise<{ accessToken: string; refreshToken: string }> {
+    async generateTokens(user: any): Promise<{ accessToken: string; refreshToken: string }> {
         const refreshTokenId = randomUUID();
         const accessToken = await this.jwtService.sign({
-            sub: user.id,
+            sub: user._id,
             email: user.email,
             role: user.role,
         }, jwtConfig.accessTokenTtl);
         const refreshToken = await this.jwtService.sign({
-            sub: user.id,
+            sub: user._id,
             refreshTokenId,
         }, jwtConfig.refreshTokenTtl);
 
-        await this.refreshTokenStorage.insert(user.id, refreshTokenId);
+        await this.refreshTokenStorage.insert(user._id.toString(), refreshTokenId);
         return { accessToken, refreshToken };
     }
 
     async refreshTokens(refreshToken: string): Promise<{ accessToken: string; refreshToken: string }> {
         try {
             const decoded = await this.jwtService.verify<{ sub: string; refreshTokenId: string }>(refreshToken);
-            const user = fakeUserRepo.get(decoded.sub);
+            const user = await User.findById(decoded.sub);
             if (!user) throw new Error('User not found');
 
-            const isValid = await this.refreshTokenStorage.validate(user.id, decoded.refreshTokenId);
+            const isValid = await this.refreshTokenStorage.validate(user._id.toString(), decoded.refreshTokenId);
             if (isValid) {
-                await this.refreshTokenStorage.invalidate(user.id);
+                await this.refreshTokenStorage.invalidate(user._id.toString());
                 return this.generateTokens(user);
             } else {
                 throw new Error('Refresh token is invalid');

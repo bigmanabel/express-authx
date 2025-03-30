@@ -1,17 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { User } from './user.entity';
+import mongoose from 'mongoose';
 
-@Entity('api-keys')
-export class ApiKey {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+const ApiKeySchema = new mongoose.Schema({
+    key: { type: String, required: true },
+    uuid: { type: String, required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+}, { timestamps: true });
 
-    @Column()
-    key: string;
-
-    @Column()
-    uuid: string;
-
-    @ManyToOne(() => User, user => user.apiKeys)
-    user: User;
-}
+export const ApiKey = mongoose.model('ApiKey', ApiKeySchema);
