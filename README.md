@@ -4,27 +4,29 @@ A secure and robust authentication API built with Express.js, TypeScript, and Po
 
 ## Features
 
-- **JWT Authentication**: Secure authentication with access and refresh tokens
-- **Role-Based Access Control**: Admin and regular user roles
-- **Input Validation**: Comprehensive validation using class-validator and DTOs
-- **Security**: Helmet, CORS, rate limiting, and other security best practices
-- **Database**: PostgreSQL with TypeORM for data persistence
-- **Redis**: Session management and token storage
-- **Logging**: Structured logging with Winston
-- **Error Handling**: Centralized error handling with proper HTTP status codes
-- **Environment Configuration**: Validated environment variables with Joi
+- 🔐 **JWT Authentication**: Secure authentication with access and refresh tokens  
+- 👮‍♂️ **Role-Based Access Control**: Admin and regular user roles  
+- ✅ **Input Validation**: Comprehensive validation using class-validator and DTOs  
+- 🛡️ **Security**: Helmet, CORS, rate limiting, and other security best practices  
+- 🗄️ **Database**: PostgreSQL with TypeORM for data persistence  
+- ⚡ **Redis**: Session management and token storage  
+- 📋 **Logging**: Structured logging with Winston  
+- 🚨 **Error Handling**: Centralized error handling with proper HTTP status codes  
+- ⚙️ **Environment Configuration**: Validated environment variables with Joi
+
 
 ## Tech Stack
 
-- **Runtime**: Node.js with TypeScript
-- **Framework**: Express.js
-- **Database**: PostgreSQL with TypeORM
-- **Cache**: Redis
-- **Authentication**: JWT with bcrypt for password hashing
-- **Validation**: class-validator and class-transformer
-- **Logging**: Winston
-- **Security**: Helmet, CORS, express-rate-limit
-- **Development**: ESLint, Prettier, ts-node-dev
+- 🧰 **Runtime**: Node.js with TypeScript  
+- 🚂 **Framework**: Express.js  
+- 🗃️ **Database**: PostgreSQL with TypeORM  
+- ⚡ **Cache**: Redis  
+- 🔑 **Authentication**: JWT with bcrypt for password hashing  
+- 🧪 **Validation**: class-validator and class-transformer  
+- 📝 **Logging**: Winston  
+- 🔒 **Security**: Helmet, CORS, express-rate-limit  
+- 🛠️ **Development**: ESLint, Prettier, ts-node-dev
+
 
 ## Prerequisites
 
@@ -84,22 +86,20 @@ npm start
 ## API Endpoints
 
 ### Authentication
-
-- `POST /api/auth/sign-up` - Register a new user
-- `POST /api/auth/sign-in` - Login with email and password
-- `POST /api/auth/refresh-tokens` - Refresh access token
+- 📝 `POST /api/auth/sign-up` - Register a new user  
+- 🔓 `POST /api/auth/sign-in` - Login with email and password  
+- ♻️ `POST /api/auth/refresh-tokens` - Refresh access token  
 
 ### Users (Protected)
-
-- `GET /api/users` - Get all users (requires authentication)
-- `GET /api/users/:id` - Get user by ID (requires authentication)
-- `POST /api/users` - Create a new user (requires admin role)
-- `PUT /api/users/:id` - Update user (requires authentication)
-- `DELETE /api/users/:id` - Delete user (requires admin role)
+- 👥 `GET /api/users` - Get all users (requires authentication)  
+- 👤 `GET /api/users/:id` - Get user by ID (requires authentication)  
+- ➕ `POST /api/users` - Create a new user (requires admin role)  
+- ✏️ `PUT /api/users/:id` - Update user (requires authentication)  
+- ❌ `DELETE /api/users/:id` - Delete user (requires admin role)  
 
 ### Health Check
+- ❤️ `GET /health` - Application health status
 
-- `GET /health` - Application health status
 
 ## Project Structure
 
@@ -179,6 +179,8 @@ npm run typecheck
 2. Add tests for new features
 3. Update documentation as needed
 4. Run linting and formatting before submitting
+
+---
 
 ## License
 
