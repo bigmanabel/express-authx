@@ -1,0 +1,8 @@
+# Logs Directory
+
+This directory contains application logs. The log files are created automatically by the Winston logger.
+
+- `error.log` - Contains error level logs and above
+- `combined.log` - Contains all log levels
+
+Log files are automatically rotated and should not be committed to version control.

@@ -1,0 +1,115 @@
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:05:08.085Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:05:08.091Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:05:08.091Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:05:39.920Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:05:39.926Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:05:51.106Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:05:51.998Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:05:52.003Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:05:52.004Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:06:28.915Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:06:29.423Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:06:29.428Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:06:29.428Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:07:27.801Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:07:27.806Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:07:27.806Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:10:36.606Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:10:36.612Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:10:37.177Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:10:37.177Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:10:37.182Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:10:37.182Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:10:37.182Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:10:37.182Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:11:03.055Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:11:03.055Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:11:03.563Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:11:03.563Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:11:03.572Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:11:03.573Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:11:03.573Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:11:03.574Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:11:08.512Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:11:08.513Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:11:08.831Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:11:08.836Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:11:08.836Z"}
+{"code":"23505","constraint":"pg_type_typname_nsp_index","detail":"Key (typname, typnamespace)=(password_reset_tokens, 2200) already exists.","driverError":{"code":"23505","constraint":"pg_type_typname_nsp_index","detail":"Key (typname, typnamespace)=(password_reset_tokens, 2200) already exists.","file":"nbtinsert.c","length":261,"line":"666","name":"error","routine":"_bt_check_unique","schema":"pg_catalog","severity":"ERROR","table":"pg_type"},"file":"nbtinsert.c","length":261,"level":"error","line":"666","message":"Failed to start application: duplicate key value violates unique constraint \"pg_type_typname_nsp_index\"","query":"CREATE TABLE \"password_reset_tokens\" (\"id\" uuid NOT NULL DEFAULT uuid_generate_v4(), \"token\" character varying NOT NULL, \"email\" character varying NOT NULL, \"createdAt\" TIMESTAMP NOT NULL DEFAULT now(), \"expiresAt\" TIMESTAMP NOT NULL, \"used\" boolean NOT NULL DEFAULT false, \"userId\" uuid, CONSTRAINT \"PK_d16bebd73e844c48bca50ff8d3d\" PRIMARY KEY (\"id\"))","routine":"_bt_check_unique","schema":"pg_catalog","service":"express-authx","severity":"ERROR","stack":"QueryFailedError: duplicate key value violates unique constraint \"pg_type_typname_nsp_index\"\n    at PostgresQueryRunner.query (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/driver/postgres/PostgresQueryRunner.ts:331:19)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at PostgresQueryRunner.executeQueries (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/query-runner/BaseQueryRunner.ts:660:13)\n    at PostgresQueryRunner.createTable (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/driver/postgres/PostgresQueryRunner.ts:622:9)\n    at RdbmsSchemaBuilder.createNewTables (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/schema-builder/RdbmsSchemaBuilder.ts:635:13)\n    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/schema-builder/RdbmsSchemaBuilder.ts:225:9)\n    at RdbmsSchemaBuilder.build (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)\n    at DataSource.synchronize (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/data-source/DataSource.ts:339:9)\n    at DataSource.initialize (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/data-source/DataSource.ts:277:43)\n    at bootstrap (/Users/abel/Desktop/Projects/Code Breakers/express-authx/src/app.ts:17:5)","table":"pg_type","timestamp":"2025-06-24T20:11:08.852Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:08.624Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:09.137Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:09.137Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:12:09.142Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:09.142Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:12:09.142Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:09.142Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:15.107Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:15.107Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:15.415Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:15.415Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:12:15.420Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:15.420Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:12:15.421Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:15.421Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:25.192Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:25.192Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:25.502Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:25.502Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:12:25.507Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:25.507Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:12:25.507Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:25.507Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:33.655Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:33.655Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:33.978Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:33.978Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:12:33.983Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:33.983Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:12:33.983Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:33.983Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:53.837Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:12:53.839Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:54.156Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:12:54.156Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:12:54.164Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:54.165Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:12:54.166Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:12:54.166Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:13:43.796Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:13:43.796Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:13:44.403Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:13:44.403Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:13:44.409Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:13:44.409Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:13:44.409Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:13:44.410Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:13:53.765Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:13:53.765Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:13:54.086Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:13:54.086Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:13:54.091Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:13:54.091Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:13:54.091Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:13:54.091Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:14:27.212Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:14:27.214Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:14:27.726Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:14:27.726Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:14:27.731Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:14:27.732Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3000","service":"express-authx","timestamp":"2025-06-24T20:14:27.731Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:14:27.732Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:14:36.632Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:15:56.394Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:15:57.334Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:15:57.339Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:15:57.339Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:17:01.668Z"}
+{"level":"info","message":"Database connection established successfully","service":"express-authx","timestamp":"2025-06-24T20:17:02.126Z"}
+{"level":"info","message":"🚀 Express server running on http://localhost:3001","service":"express-authx","timestamp":"2025-06-24T20:17:02.131Z"}
+{"level":"info","message":"📝 Environment: development","service":"express-authx","timestamp":"2025-06-24T20:17:02.131Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","service":"express-authx","timestamp":"2025-06-24T20:27:11.608Z"}
+{"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:15:12.514Z"}
+{"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:15:37.708Z"}
+{"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:17:42.208Z"}
+{"level":"warn","message":"MongoDB disconnected","service":"express-authx","timestamp":"2025-06-24T21:17:54.535Z"}
