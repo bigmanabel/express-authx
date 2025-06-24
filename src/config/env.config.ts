@@ -30,6 +30,9 @@ const envSchema = Joi.object({
   // API Rate limiting
   RATE_LIMIT_WINDOW_MS: Joi.number().positive().default(900000), // 15 minutes
   RATE_LIMIT_MAX_REQUESTS: Joi.number().positive().default(100),
+
+  // Frontend URL for email links
+  FRONTEND_URL: Joi.string().uri().default('http://localhost:3000'),
 }).unknown();
 
 // Validate environment variables
@@ -68,6 +71,8 @@ export const config = {
     windowMs: envVars.RATE_LIMIT_WINDOW_MS,
     maxRequests: envVars.RATE_LIMIT_MAX_REQUESTS,
   },
+
+  frontendUrl: envVars.FRONTEND_URL,
 };
 
 export default config;
