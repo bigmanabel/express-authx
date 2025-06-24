@@ -113,3 +113,4 @@
 {"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:15:37.708Z"}
 {"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:17:42.208Z"}
 {"level":"warn","message":"MongoDB disconnected","service":"express-authx","timestamp":"2025-06-24T21:17:54.535Z"}
+{"level":"info","message":"📦 MongoDB connected successfully","service":"express-authx","timestamp":"2025-06-24T21:18:06.742Z"}
