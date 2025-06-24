@@ -7,7 +7,7 @@ const router = Router();
 const appController = new AppController();
 
 router.get('/', (req, res) => {
-    res.send(appController.getHello());
+  res.send(appController.getHello());
 });
 router.use('/auth', authRoutes);
 router.use('/users', usersRoutes);

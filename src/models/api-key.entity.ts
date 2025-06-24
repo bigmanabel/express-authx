@@ -3,15 +3,15 @@ import { User } from './user.entity';
 
 @Entity('api-keys')
 export class ApiKey {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column()
-    key: string;
+  @Column()
+  key: string;
 
-    @Column()
-    uuid: string;
+  @Column()
+  uuid: string;
 
-    @ManyToOne(() => User, user => user.apiKeys)
-    user: User;
+  @ManyToOne(() => User, user => user.apiKeys)
+  user: User;
 }
